@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="com.lzq.mapper.UserDao">
+
+    <update id="userActive" parameterType="String">
+            update user set status='Y' where code = #{string}
+    </update>
+
+    <update id="updateInfo" parameterType="com.lzq.po.User">
+update user set age = #{age}, nick_name = #{nickName} ,introduction = #{introduction} ,head_address = #{headAddress} where id = #{id}
+    </update>
+
+    <update id="userCheckedOK" parameterType="int">
+    update user set user_checked = '正常' where id = #{id}
+    </update>
+
+</mapper>
